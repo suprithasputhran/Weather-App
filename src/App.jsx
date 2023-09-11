@@ -8,7 +8,7 @@ import { WeatherContext } from './context';
 function App() {
   const [data, setData] = useState([]);
   const apiKey = "1d35dcc8063b4122ad764306233001";
-  const [city, setCity] = useState('');
+  const [city, setCity] = useState('udupi');
   const [loading, isLoading] = useState(true);
   // const [error, setError]=useState(null);
   // const [queryTimeout, setQueryTimeout]=useState(null);
@@ -20,9 +20,8 @@ function App() {
       .then((response) => { 
         setData(response.data);
         isLoading(false);
-        setCity(response.data.location.name);
         console.log(response.data);
-        console.log(response.data.location.name)
+     
       }).catch(error => {
 
         console.log("error", error);
